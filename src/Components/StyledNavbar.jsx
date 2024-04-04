@@ -28,6 +28,12 @@ const StyledNavbar = () => {
       >
         Products
       </NavLink>
+      <NavLink
+        to="/Login"
+        className={({ isActive }) => (isActive ? "link active" : "link")}
+      >
+        Login
+      </NavLink>
     </nav>
   );
 };
