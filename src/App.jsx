@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Products from "./Pages/Products";
 import About from "./Pages/About";
 import Error from "./Pages/Error";
+import SharedLayout from "./Pages/SharedLayout";
 
 function App() {
   return (
@@ -16,12 +17,14 @@ function App() {
         path = url
         element - what we want to render 
         */}
-        <Route path="/" element={<Home />} />
-        <Route path="Products" element={<Products />} />
-        <Route path="About" element={<About />} />
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+          <Route path="Products" element={<Products />} />
+          <Route path="About" element={<About />} />
 
-        {/* Error Page path is asterisk */}
-        <Route path="*" element={<Error />} />
+          {/* Error Page path is asterisk */}
+          <Route path="*" element={<Error />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
